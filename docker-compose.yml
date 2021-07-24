@@ -1,0 +1,33 @@
+version: '3'
+services: 
+    web:
+        #Added environment because not automatically reloading after a code change
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        
+        #A bug was introduced with the latest Create React App version that is causing the React app to exit when starting with Docker Compose
+        stdin_open: true
+        
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - '3000:3000'
+        volumes:
+            - /app/node_modules
+            - .:/app
+    tests:
+        #Added environment because not automatically reloading after a code change
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        
+        #A bug was introduced with the latest Create React App version that is causing the React app to exit when starting with Docker Compose
+        stdin_open: true
+        
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /app/node_modules
+            - .:/app
+        command: ["npm", "run", "test"]
