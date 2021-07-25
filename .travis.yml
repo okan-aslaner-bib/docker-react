@@ -14,4 +14,4 @@ deploy:
   provider: azure_web_apps
   site: https://okandeploy@docker-react99.scm.azurewebsites.net/docker-react99.git
   username: $AZURE_USERNAME
-  password: $AZURE_PASSWORD
+  password: "$AZURE_PASSWORD"
