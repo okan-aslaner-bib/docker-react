@@ -15,6 +15,6 @@ deploy:
   verbose: true
   on:
     all_branches: true
-  site: docker-react42
+  site: docker-react99
   username: $AZURE_USERNAME
   password: "$AZURE_PASSWORD"
