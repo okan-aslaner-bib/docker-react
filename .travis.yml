@@ -15,6 +15,6 @@ deploy:
   verbose: true
   on:
     all_branches: true
-  site: https://okandeploy@docker-react99.scm.azurewebsites.net/docker-react99.git
+  site: okandeploy@docker-react99.scm.azurewebsites.net/docker-react99.git
   username: $AZURE_USERNAME
   password: "$AZURE_PASSWORD"
